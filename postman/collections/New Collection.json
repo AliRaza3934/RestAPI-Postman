@@ -47,6 +47,26 @@
 		},
 		{
 			"name": "New request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b604b95-559d-4ed2-ab8f-afd7b4e46c39",
+						"exec": [
+							"tests [\"validating status code\"] = responseCode.code = 2;",
+							"",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating url\"] = response.support.url =\"https://reqres.in/#support-heading\";",
+							"tests[\"response text\"] = response.support.text=\"To keep ReqRes free, contributions towards server costs are appreciated!\";",
+							"tests[\"validating first name\"] = response.data.first_name=\"Emma\";",
+							"tests[\"validating last_name\"] = response.data.last_name=\"Wong\";",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "9967575d-d149-4cde-966a-a4c7b5a6f412",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -55,7 +75,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://reqres.in/api/users/3",
+					"protocol": "http",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
 				}
 			},
 			"response": []
