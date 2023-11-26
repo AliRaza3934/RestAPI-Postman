@@ -8,13 +8,40 @@
 	"item": [
 		{
 			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "40022d1b-dc92-4d5e-a49c-777fc2fed4c9",
+						"exec": [
+							"tests[\"validting status code\"] = responseCode.code = 200;",
+							"var response = JSON.parse(responseBody);",
+							"tests[\"response email\"] = response.data.email =\"janet.weaver@reqres.in\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "3effd463-1180-4e3f-97d1-77540b038ee4",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://reqres.in/api/users/2",
+					"protocol": "http",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
 			},
 			"response": []
 		},
@@ -26,7 +53,25 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get new request",
+			"id": "cd842d21-2c55-4b96-bcb6-3fdbeefc7cd4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
 			},
 			"response": []
 		}
