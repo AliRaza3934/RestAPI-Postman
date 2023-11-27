@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "6eac0ce8-ea28-473a-97f5-cae2b7e6c17c",
+		"name": "Employee data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24813695-6eac0ce8-ea28-473a-97f5-cae2b7e6c17c"
+	},
+	"item": [
+		{
+			"name": "Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8eff275f-685f-4313-8848-92f030ada34d",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating id \"]= response.data[0].id=\"1\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8f86f502-2db7-42cd-933b-c54643243572",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/employees",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create record",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8eff275f-685f-4313-8848-92f030ada34d",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"test[\"validating message\"] = response.message =\"Successfully! Record has been added.\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "07afa3d4-4709-444d-9b02-8b9f96643708",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"AliRaza\",\"salary\":\"67788\",\"age\":\"22\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/create",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "092fc264-218a-4f08-a511-6cab36dee96c",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating message\"] = response.message =\"Successfully! Record has been updated.\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b8bd7505-e0c7-4962-adec-7b9ec4f3edad",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"AliRaza\",\"salary\":\"67999\",\"age\":\"19\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/update/1212",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"update",
+						"1212"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "91994e39-f931-417e-a806-81d486833dfc",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating message\"] = response.message =\"Successfully! Record has been deleted.\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "63931690-874f-4bd1-93bf-c3d636e1cf89",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/delete/7359",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"delete",
+						"7359"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
