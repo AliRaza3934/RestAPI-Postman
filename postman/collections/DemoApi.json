@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "9a137c9d-0d1e-42cd-9d57-f9c766d6134a",
+		"name": "DemoApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24813695-9a137c9d-0d1e-42cd-9d57-f9c766d6134a"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "40022d1b-dc92-4d5e-a49c-777fc2fed4c9",
+						"exec": [
+							"tests[\"validting status code\"] = responseCode.code = 200;",
+							"var response = JSON.parse(responseBody);",
+							"tests[\"response email\"] = response.data.email =\"janet.weaver@reqres.in\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3effd463-1180-4e3f-97d1-77540b038ee4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://reqres.in/api/users/2",
+					"protocol": "http",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b604b95-559d-4ed2-ab8f-afd7b4e46c39",
+						"exec": [
+							"tests [\"validating status code\"] = responseCode.code = 2;",
+							"",
+							"",
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating url\"] = response.support.url =\"https://reqres.in/#support-heading\";",
+							"tests[\"response text\"] = response.support.text=\"To keep ReqRes free, contributions towards server costs are appreciated!\";",
+							"tests[\"validating first name\"] = response.data.first_name=\"Emma\";",
+							"tests[\"validating last_name\"] = response.data.last_name=\"Wong\";",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9967575d-d149-4cde-966a-a4c7b5a6f412",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://reqres.in/api/users/3",
+					"protocol": "http",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "656da6a3-5138-4790-97f1-305ea0aa12eb",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating employee aage \"]= response.data[0].employee_age=\"61\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e17809b0-0c54-4a04-adbd-ed12d485f6bb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/employees",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e7dbb5e-7c49-41c2-8399-1e2db06fe655",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating token\"] = responseBody.has(\"token\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "de8f994d-baed-44a5-b7e9-ad4b4df39a6f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"eve.holt@reqres.in\",\n    \"password\": \"cityslicka\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/login",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e7dbb5e-7c49-41c2-8399-1e2db06fe655",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating error\"] = responseBody.has(\"error\");",
+							"tests[\"validating mesage\"] = responseBody.has(\"user not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e0e299ab-d65c-40da-8f99-125b710f2d4c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"eve.6666holt@reqres.in\",\n    \"password\": \"cityslicka\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/login",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
