@@ -91,16 +91,129 @@
 			"response": []
 		},
 		{
-			"name": "get new request",
-			"id": "cd842d21-2c55-4b96-bcb6-3fdbeefc7cd4",
+			"name": "New Request",
+			"id": "e17809b0-0c54-4a04-adbd-ed12d485f6bb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/employees",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e7dbb5e-7c49-41c2-8399-1e2db06fe655",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating token\"] = responseBody.has(\"token\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "de8f994d-baed-44a5-b7e9-ad4b4df39a6f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"eve.holt@reqres.in\",\n    \"password\": \"cityslicka\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": ""
+					"raw": "https://reqres.in/api/login",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e7dbb5e-7c49-41c2-8399-1e2db06fe655",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating error\"] = responseBody.has(\"error\");",
+							"tests[\"validating mesage\"] = responseBody.has(\"user not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e0e299ab-d65c-40da-8f99-125b710f2d4c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"eve.6666holt@reqres.in\",\n    \"password\": \"cityslicka\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/login",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"login"
+					]
 				}
 			},
 			"response": []
