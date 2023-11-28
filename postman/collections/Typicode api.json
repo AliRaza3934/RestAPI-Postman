@@ -50,13 +50,45 @@
 		},
 		{
 			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e154c3b-6f0d-48ef-ac23-e462793e02d4",
+						"exec": [
+							"tests[\"validating status code\"] = responseCode.code=200;",
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating name\"]= response.name=\"fugit labore quia mollitia quas deserunt nostrum sunt\";",
+							"tests[\"validating email\"]=response.email=\"Veronica_Goodwin@timmothy.net\";",
+							"tests[\"validatign another email\"] =response.email=\"Nathan@solon.io\";",
+							"tests[\"validating id\"] = response.id=5;",
+							"tests[\"validating body\"] = response.body=\"fuga eos qui dolor rerum\\ninventore corporis exercitationem\\ncorporis cupiditate et deserunt recusandae est sed quis culpa\\neum maiores corporis et\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "9b99699e-776e-497f-b0c6-3d5b3306d5b5",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/3/comments",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"3",
+						"comments"
+					]
+				}
 			},
 			"response": []
 		},
