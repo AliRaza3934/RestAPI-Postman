@@ -94,13 +94,44 @@
 		},
 		{
 			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "09db7cc8-6d5b-4055-bc98-44cd420ac216",
+						"exec": [
+							"tests[\"validating status code\"]= responseCode.code=200;",
+							"var response =JSON.parse(responseBody);",
+							"tests[\"validatind postid\"]= response.postId=4;",
+							"tests[\"validating id\"]= response.id=16;",
+							"tests[\"validating email\"]=response.email=\"Christine@ayana.info\";",
+							"tests[\"validating body\"]=response.body=\"doloribus est illo sed minima aperiam\\nut dignissimos accusantium tempore atque et aut molestiae\\nmagni ut accusamus voluptatem quos ut voluptates\\nquisquam porro sed architecto ut\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "39f5c3d4-f4fb-4f5f-b552-a9b07b39f18e",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/4/comments",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"4",
+						"comments"
+					]
+				}
 			},
 			"response": []
 		},
