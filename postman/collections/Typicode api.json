@@ -47,6 +47,42 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "9b99699e-776e-497f-b0c6-3d5b3306d5b5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "39f5c3d4-f4fb-4f5f-b552-a9b07b39f18e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "5dff5281-bed8-4bfc-97ea-d2041f6ac497",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
