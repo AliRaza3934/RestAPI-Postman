@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "a905379f-05b9-4f0e-9634-7b7a0bec56a5",
+		"name": "Typicode api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24813695-a905379f-05b9-4f0e-9634-7b7a0bec56a5"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1f66c179-09c0-46a9-ad93-3763f460aa61",
+						"exec": [
+							"var response = JSON.parse(responseBody)",
+							"tests[\"validating id\"] = response.id=1;",
+							"tests[\"validating another id\"] = response.id=16;",
+							"tests[\"validating title\"] = response.title=\"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\";",
+							"tests[\"validating body\"] =response.body=\"suscipit nam nisi quo aperiam aut\\nasperiores eos fugit maiores voluptatibus quia\\nvoluptatem quis ullam qui in alias quia est\\nconsequatur magni mollitia accusamus ea nisi voluptate dicta\";",
+							"",
+							"tests[\"validting status code\"] = responseCode.code = 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4460950b-7331-4b57-abd1-c6b5deaaec02",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
