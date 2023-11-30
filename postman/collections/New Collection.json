@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "4f2981fd-4c89-4b5d-8372-1bfe412e066a",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24813695-4f2981fd-4c89-4b5d-8372-1bfe412e066a"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2583b182-97a5-4fe7-9ec8-75e6c89f91f6",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating url\"] = response.url=\"http://postman-echo.com/get\";",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2f6b430a-4b6c-4af5-a058-6bab365f762b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "postman-echo.com/get",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

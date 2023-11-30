@@ -177,6 +177,29 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "23a4961d-7184-42e4-a1f5-31f1aefdbb5a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
