@@ -180,6 +180,19 @@
 		},
 		{
 			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25b05cb1-ba4a-472a-9742-7c91aba731e8",
+						"exec": [
+							"var response = JSON.parse(responseBody);",
+							"tests[\"validating email\"] = response.url = \"https://postman-echo.com/get\";"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "23a4961d-7184-42e4-a1f5-31f1aefdbb5a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
