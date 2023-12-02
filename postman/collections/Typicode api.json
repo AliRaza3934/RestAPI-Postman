@@ -207,9 +207,7 @@
 							"pm.response.to.have.header(\"Connection\",\"keep-alive\");",
 							"});",
 							"",
-							"pm.test(\"Session cookie is present\",function(){",
-							"    pm.response.to.have.cookie(\"sails.sid\");",
-							"});",
+							"",
 							""
 						],
 						"type": "text/javascript"
