@@ -148,7 +148,17 @@
 							"tests[\"validating id\"] = response.id=21;",
 							"tests[\"validating email\"] = response.email=\"Khalil@emile.co.uk\";",
 							"tests[\"validating body\"]= response.body=\"voluptates provident repellendus iusto perspiciatis ex fugiat ut\\nut dolor nam aliquid et expedita voluptate\\nsunt vitae illo rerum in quos\\nvel eligendi enim quae fugiat est\";",
-							"tests[\"validating postId\"]= response.postId=5;"
+							"tests[\"validating postId\"]= response.postId=5;",
+							"",
+							"pm.test(\"Content-Encoding\", function () {",
+							"pm.response.to.have.header(\"Content-Encoding\", \"br\");",
+							"});",
+							"",
+							"pm.test(\"alt-svc\",function(){",
+							"    pm.response.to.have.header(\"alt-svc\");",
+							"});",
+							"",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -187,7 +197,18 @@
 						"id": "25b05cb1-ba4a-472a-9742-7c91aba731e8",
 						"exec": [
 							"var response = JSON.parse(responseBody);",
-							"tests[\"validating email\"] = response.url = \"https://postman-echo.com/get\";"
+							"tests[\"validating email\"] = response.url = \"https://postman-echo.com/get\";",
+							"",
+							"pm.test(\"Content-Type is application/json; charset=utf-8\", function () {",
+							"pm.response.to.have.header(\"Content-Type\", \"application/json; charset=utf-8\");",
+							"});",
+							"",
+							"pm.test(\"Connection\",function(){",
+							"pm.response.to.have.header(\"Connection\",\"keep-alive\");",
+							"});",
+							"",
+							"",
+							""
 						],
 						"type": "text/javascript"
 					}
