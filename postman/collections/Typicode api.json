@@ -20,7 +20,15 @@
 							"tests[\"validating title\"] = response.title=\"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\";",
 							"tests[\"validating body\"] =response.body=\"suscipit nam nisi quo aperiam aut\\nasperiores eos fugit maiores voluptatibus quia\\nvoluptatem quis ullam qui in alias quia est\\nconsequatur magni mollitia accusamus ea nisi voluptate dicta\";",
 							"",
-							"tests[\"validting status code\"] = responseCode.code = 200;"
+							"tests[\"validting status code\"] = responseCode.code = 200;",
+							"",
+							"pm.test(\"Content-Encoding\",function(){",
+							"    pm.response.to.have.header(\"Content-Encoding\",\"br\")",
+							"})",
+							"",
+							"pm,test(\"server\",function(){",
+							"    pm.response.to.have.header(\"server\",\"cloudflare\");",
+							"});"
 						],
 						"type": "text/javascript"
 					}

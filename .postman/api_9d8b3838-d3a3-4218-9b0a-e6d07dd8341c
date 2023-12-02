@@ -11,6 +11,7 @@ id = 9d8b3838-d3a3-4218-9b0a-e6d07dd8341c
 rootDirectory = postman/collections
 files[] = {"id":"24813695-9a137c9d-0d1e-42cd-9d57-f9c766d6134a","path":"DemoApi.json","metaData":{}}
 files[] = {"id":"24813695-6eac0ce8-ea28-473a-97f5-cae2b7e6c17c","path":"Employee data.json","metaData":{}}
+files[] = {"id":"24813695-c2f230b3-c726-4249-aaae-18df8e8adf5c","path":"New Api.json","metaData":{}}
 files[] = {"id":"24813695-4f2981fd-4c89-4b5d-8372-1bfe412e066a","path":"New Collection.json","metaData":{}}
 files[] = {"id":"24813695-a905379f-05b9-4f0e-9634-7b7a0bec56a5","path":"Typicode api.json","metaData":{}}
 
