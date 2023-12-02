@@ -42,6 +42,13 @@
 							"});",
 							"pm.test(\"Vary\",function(){",
 							"    pm.response.to.have.header(\"Vary\",\"Origin, Accept-Encoding\");",
+							"});",
+							"pm.test(\"Access-Control-Allow_Credentials\",function(){",
+							"  pm.response.to.have.header(\"Access-Control-Allow-Credentials\",\"true\");",
+							"});",
+							"",
+							"pm.test(\"Cache-Control\",function(){",
+							"  pm.response.to.have.header(\"Cache-Control\",\"max-age=43200\");",
 							"});"
 						],
 						"type": "text/javascript"
