@@ -204,7 +204,15 @@
 							"tests[\"validatind postid\"]= response.postId=4;",
 							"tests[\"validating id\"]= response.id=16;",
 							"tests[\"validating email\"]=response.email=\"Christine@ayana.info\";",
-							"tests[\"validating body\"]=response.body=\"doloribus est illo sed minima aperiam\\nut dignissimos accusantium tempore atque et aut molestiae\\nmagni ut accusamus voluptatem quos ut voluptates\\nquisquam porro sed architecto ut\";"
+							"tests[\"validating body\"]=response.body=\"doloribus est illo sed minima aperiam\\nut dignissimos accusantium tempore atque et aut molestiae\\nmagni ut accusamus voluptatem quos ut voluptates\\nquisquam porro sed architecto ut\";",
+							"",
+							"pm.test(\"Content-Type\",function(){",
+							"  pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");",
+							"});",
+							"",
+							"pm.test(\"Transfer-Encoding\",function(){",
+							"  pm.response.to.have.header(\"Transfer-Encoding\",\"chunked\");",
+							"});"
 						],
 						"type": "text/javascript"
 					}
