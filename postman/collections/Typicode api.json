@@ -244,6 +244,10 @@
 							"",
 							"pm.test(\"Via\",function(){",
 							"  pm.response.to.have.header(\"Via\",\"1.1 vegur\");",
+							"});",
+							"",
+							"pm.test(\"Content-Encoding\",function(){",
+							"  pm.response.to.have.header(\"Content-Encoding\",\"br\");",
 							"});"
 						],
 						"type": "text/javascript"
